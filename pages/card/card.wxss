@@ -1,0 +1,9 @@
+.page-section-ctn {
+  text-align: center;
+}
+
+.image {
+  margin-top: 30rpx;
+  width: 121px;
+  height: 140px;
+}
