@@ -1,0 +1,6 @@
+<view>{{ msg }}</view>
+<button bindtap="clickMe">点击我</button>
+
+      <navigator url="../card/card?title=123" hover-class="navigator-hover">
+        <button type="default">跳转到名片界面</button>
+      </navigator>  

@@ -5,17 +5,18 @@
     <form bindsubmit="submit">
       <!-- <view class="page-section page-section-gap"> -->
         <view class="page-section-ctn">
-          <image class="image" src="../../image/head1.jpg"/>
+          <image class="image" src="../../images/head1.jpg"/>
         </view>
-        <view class="weui-input" name="firstName">李白 文学顾问</view>
-        <view class="page-section" id="mobilePhoneNumber" name="mobilePhoneNumber" placeholder="233">13333333333</view>
+        <view class="weui-input" name="firstName" value="xx">李白 文学顾问</view>
+        <view class="page-section" name="mobilePhoneNumber" placeholder="233">13333333333</view>
+        <input class="weui-input" name="mobilePhoneNumber" placeholder='123' />
         <view class="btn-area">
           <button type="default" formType="submit444">分享名片</button>
           <button type="primary" formType="submit">存入手机通讯录</button>
         </view>
       <!-- </view> -->
 
-      <input class="weui-input" name="mobilePhoneNumbergggg" placeholder='123' /> 
+       
 
     </form>  
   </view>
