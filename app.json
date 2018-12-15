@@ -1,7 +1,8 @@
 {
   "pages":[
+    "pages/live/live",  
     "pages/index/index",
-    "pages/card/card",    
+    "pages/card/card",  
     "pages/website/website",
     "pages/logs/logs"
   ],
@@ -30,7 +31,7 @@
         "text": "官网"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/live/live",
         "iconPath": "images/tabBar/live.png",
         "selectedIconPath": "images/tabBar/liveHL.png",
         "text": "动态"
