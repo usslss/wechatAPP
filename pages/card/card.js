@@ -1,26 +1,49 @@
 Page({
+  data: {
+    showView: true,
+    list: [
+      {
+        img: "../../images/7x7.jpg",
+        name: "Red",
+        phone: "13604555555",
+        job: "平面模特",
+        co: "杭州凌睿酒店管理有限公司"
+      }
+    ]
+  },
+  onLoad: function (options) {
+    // 生命周期函数--监听页面加载
+    showView: (options.showView == "true" ? true : false)
+  }
+  , onChangeShowState: function () {
+    var that = this;
+    that.setData({
+      showView: (!that.data.showView)
+    })
+  },
   onShareAppMessage() {
     return {
-      title: '新增联系人',
-      path: 'page/API/pages/add-contact/add-contacts'
+      title: '这里标题暂时不知道该叫啥',
+      path: 'page/component/pages/view/view'
     }
   },
-
-  submit(e) {
-    const formData = e.detail.value
-    wx.addPhoneContact({
-      firstName: this.data.firstName,
-      ...formData,
-      success() {
-        wx.showToast({
-          title: '联系人创建成功'
-        })
+  phoneCall: function (e) {
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.replyPhone,
+      success: function () {
+        console.log("成功拨打电话")
       },
-      fail() {
-        wx.showToast({
-          title: '联系人创建失败'
-        })
-      }
     })
-  }
+  },
+  savePhone: function () {
+    wx.addPhoneContact({
+      firstName: "李白",
+      mobilePhoneNumber: "13604599228",
+      organization: "a公司",
+      title: "平面模特",
+    })
+  },
+
 })
+
+

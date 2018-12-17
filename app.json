@@ -1,9 +1,8 @@
 {
   "pages":[
-    "pages/live/live",  
-    "pages/index/index",
+    "pages/index/index",    
+    "pages/contact/contact",  
     "pages/card/card",  
-    "pages/website/website",
     "pages/logs/logs"
   ],
   "window":{
@@ -31,10 +30,10 @@
         "text": "官网"
       },
       {
-        "pagePath": "pages/live/live",
+        "pagePath": "pages/contact/contact",
         "iconPath": "images/tabBar/live.png",
         "selectedIconPath": "images/tabBar/liveHL.png",
-        "text": "动态"
+        "text": "联系我们"
       }
     ]
   }

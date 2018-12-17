@@ -1,25 +1,39 @@
-<!--card.wxml-->
-<view class="container">
-
-  <view class="page-body">
-    <form bindsubmit="submit">
-      <!-- <view class="page-section page-section-gap"> -->
+<view class="section" wx:for="{{list}}">
+  <view class="flex-wrp" style="height: 400px;flex-direction:column;scroll-x:false">
         <view class="page-section-ctn">
-          <image class="image" src="../../images/head1.jpg"/>
+          <image class="image" mode="widthFix" src="{{item.img}}"/>
+          <view class="flex-item" >
+              <view class="text-info-min">
+                <text class="text-name">{{item.name}}</text>
+                <text class="text-job">  {{item.job}}</text>
+                <text class="text-phone">\n{{item.phone}}</text>
+              </view>
+          </view>
         </view>
-        <view class="weui-input" name="firstName" value="xx">李白 文学顾问</view>
-        <view class="page-section" name="mobilePhoneNumber" placeholder="233">13333333333</view>
-        <input class="weui-input" name="mobilePhoneNumber" placeholder='123' />
-        <view class="btn-area">
-          <button type="default" formType="submit444">分享名片</button>
-          <button type="primary" formType="submit">存入手机通讯录</button>
+         <view >
+             <button class="hide{{showView?'show':''}}" bindtap="onChangeShowState">{{showView?'展开全部名片信息 ↓':'显示'}}</button>
+             <button class="hide{{showView?'':'show'}}" bindtap="onChangeShowState">{{showView?'隐藏':'收起以下名片信息 ↑'}}</button>
+         </view>
+         <view class="hide{{showView?'':'show'}}" style="width:100%;">
+            <view class="text-info-details">
+              <view class="line" data-reply-phone="{{item.phone}}" bindtap="phoneCall">
+                 <text class="text">电话:{{item.phone}}</text>
+              </view>
+              <view class="line">
+                <text class="text">公司:{{item.co}}</text>
+              </view>
+            </view>
+         </view>
+    <view class="flex-wrp" style="margin-top:320rpx;height: 100px;flex-direction:column;">
+        <view class="flex-wrp" style="flex-direction:row;margin-top:-300rpx">
+          <button type="primary" open-type="share" plain="true" class="btn">分享名片</button>
+          <button type="primary" class="btn" bindtap="savePhone">存入手机通讯录</button>
         </view>
-      <!-- </view> -->
-
-       
-
-    </form>  
+  </view>     
   </view>
-
-
+   
 </view>
+
+
+
+

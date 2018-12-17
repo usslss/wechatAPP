@@ -1,4 +1,4 @@
-// pages/website/website.js
+// pages/contact/contact.js
 Page({
 
   /**
@@ -62,5 +62,14 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  
+  onTabItemTap:function(options){
+    wx.switchTab({
+      url: '/pages/contact/contact',
+    })
+    wx.makePhoneCall({
+      phoneNumber: '13604555555',
+    })
   }
 })
