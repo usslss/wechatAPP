@@ -1,1 +1,110 @@
-/* pages/contact/contact.wxss */
+/**index.wxss**/
+.title{
+  width: 90%;
+  height: 30px;
+  margin:10px auto;
+  font-weight: bold;
+  font-family: "微软雅黑";
+  font-size: 16px;
+}
+
+.int{
+  width: 90%;
+  margin:10px auto;
+  font-size: 14px;
+  font-family: "微软雅黑";
+  color: #666;
+}
+
+.textarea{
+  width: 80%;
+  height: 60px;
+  border:none;
+  margin:10px auto 0;
+  background: #fff;
+  padding: 15px 15px;
+  font-size: 15px;
+}
+
+.phcolor{
+    color:#7C7C7C;
+    margin: 10px 10px;
+    font-size: 15px;
+    font-family: "微软雅黑";
+}
+
+.ff-hv{
+  width: 90%;
+  height: 25px;
+  background: #fff;
+  display: block;
+  margin:0 auto;
+  color: #C9C9C9;
+  font-size: 15px;
+  text-align: right;
+  border-right:10px solid #fff;
+  box-sizing: border-box;
+}
+
+.imgfile{
+  width: 90%;
+  height: 20px;
+  margin: 10px auto;
+  font-family: "微软雅黑";
+  font-size: 15px;
+}
+
+.imgselect{
+  width: 80px;
+  height: 80px;
+  border:1px solid #DCDCDC;
+  text-align: center;
+  line-height: 80px;
+  font-size: 100px;
+  font-weight: light;
+  background: url(http://wxpad.cn/yunpan/cdn/imgsrc/1523702768.png);
+}
+
+.imgselect image{
+  width: 80px;
+  height: 80px;
+}
+
+.btn{
+  width:80%;
+  margin:0 auto;
+  background: #20AC19;
+  color:#fff;
+}
+
+.kefu{
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin:10px auto;
+}
+
+.footer{
+  width: 125px;
+  height: 30px;
+  margin:10px auto;
+}
+
+.footer image{
+  width: 125px;
+  height: 30px;
+}
+
+.xgurl{
+  width: 90%;
+  height: 45px;
+  margin:10px auto;
+  background: #fff;
+}
+
+.xgurl-phcolor{
+  color:#7C7C7C;
+  font-size: 15px;
+  text-indent:10px;
+  font-family: "微软雅黑";
+}

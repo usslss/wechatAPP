@@ -3,6 +3,8 @@
     "pages/index/index",    
     "pages/contact/contact",  
     "pages/card/card",  
+    "pages/about/about",   
+    "pages/store/store",
     "pages/logs/logs"
   ],
   "window":{
@@ -10,31 +12,5 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
-  },
-  "tabBar": {
-    "color": "#9b9db1",
-    "selectedColor": "#3cc51f",
-    "borderStyle": "black",
-    "backgroundColor": "#ffffff",
-    "list": [
-      {
-        "pagePath": "pages/card/card",
-        "iconPath": "images/tabBar/card.png",
-        "selectedIconPath": "images/tabBar/cardHL.png",
-        "text": "名片"
-      },
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "images/tabBar/website.png",
-        "selectedIconPath": "images/tabBar/websiteHL.png",
-        "text": "官网"
-      },
-      {
-        "pagePath": "pages/contact/contact",
-        "iconPath": "images/tabBar/contact.png",
-        "selectedIconPath": "images/tabBar/contactHL.png",
-        "text": "联系我们"
-      }
-    ]
   }
 }

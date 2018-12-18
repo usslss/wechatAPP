@@ -1,0 +1,3 @@
+/* pages/join/join.wxss */
+.join{width:750rpx;margin:0 auto;}
+.join image{width:750rpx;height:234rpx;}

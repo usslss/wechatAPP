@@ -1,0 +1,50 @@
+<!--pages/about/about.wxml-->
+
+<view class="container">
+  <image src='http://www.miaocafe.net/xcx/banner.jpg' class='banner'></image>
+  <view class='nav'>
+    <navigator url='/pages/about/about' class="active">
+      <image src='http://www.miaocafe.net/xcx/icon1.png'></image>
+      <p>品牌概况</p>
+    </navigator>
+    <navigator url='/pages/product/product'>
+      <image src='http://www.miaocafe.net/xcx/icon2.png'></image>
+      <p>特色产品</p>
+    </navigator>
+    <navigator url='/pages/store/store'>
+      <image src='http://www.miaocafe.net/xcx/icon3.png'></image>
+      <p>门店动态</p>
+    </navigator>
+    <navigator url='/pages/join/join'>
+      <image src='http://www.miaocafe.net/xcx/icon4.png'></image>
+      <p>加盟政策</p>
+    </navigator>
+  </view>
+  <view class='about'>
+    <image src='http://www.miaocafe.net/xcx/about-img_01.jpg' ></image>
+    <image src='http://www.miaocafe.net/xcx/about-img_02.jpg' ></image>
+    <image src='http://www.miaocafe.net/xcx/about-img_03.jpg' ></image>
+    <image src='http://www.miaocafe.net/xcx/about-img_04.jpg' ></image>
+    <image src='http://www.miaocafe.net/xcx/about-img_05.jpg' ></image>
+    <image src='http://www.miaocafe.net/xcx/about-img_06.jpg' ></image>
+    <image src='http://www.miaocafe.net/xcx/about-img_07.jpg' ></image>
+    <image src='http://www.miaocafe.net/xcx/about-img_08.jpg' ></image>
+    <image src='http://www.miaocafe.net/xcx/about-img_09.jpg' ></image>
+    <image src='http://www.miaocafe.net/xcx/about-img_10.jpg' ></image>
+    <image src='http://www.miaocafe.net/xcx/about-img_11.jpg' ></image>
+    <image src='http://www.miaocafe.net/xcx/about-img_12.jpg' ></image>
+    <image src='http://www.miaocafe.net/xcx/about-img_13.jpg' ></image>
+    <image src='http://www.miaocafe.net/xcx/about-img_14.jpg' ></image>
+    <image src='http://www.miaocafe.net/xcx/about-img_15.jpg' ></image>
+    <image src='http://www.miaocafe.net/xcx/about-img_16.jpg' ></image>
+    <image src='http://www.miaocafe.net/xcx/about-img_17.jpg' ></image>
+
+  </view>
+  <view class='ly'>
+    <p>立即加入成为他们中的一员</p>
+    <input placeholder="请输入您的姓名" class='name' />
+    <input placeholder="请输入您的手机号" class='phone' />
+    <button class='jm'></button>
+  </view>
+</view>
+

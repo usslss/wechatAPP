@@ -1,3 +1,6 @@
+//加载自定义tabBar
+const app = getApp()
+var template = require('../template/template.js');
 Page({
   data: {
     showView: true,
@@ -12,7 +15,8 @@ Page({
     ]
   },
   onLoad: function (options) {
-    // 生命周期函数--监听页面加载
+    template.tabbar("tabBar", 0, this)//数字i表示第i+1个tabbar
+    // 生命周期函数--监听页面加载    
     showView: (options.showView == "true" ? true : false)
   }
   , onChangeShowState: function () {
@@ -23,7 +27,7 @@ Page({
   },
   onShareAppMessage() {
     return {
-      title: '这里标题暂时不知道该叫啥',
+      title: '欢迎访问',
       path: 'page/component/pages/view/view'
     }
   },

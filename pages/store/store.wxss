@@ -1,0 +1,3 @@
+/* pages/store/store.wxss */
+.store{width:750rpx;margin:0 auto;}
+.store image{width:750rpx;height:354rpx;}

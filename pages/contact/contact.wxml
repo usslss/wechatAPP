@@ -1,2 +1,4 @@
-<!--pages/contact/contact.wxml-->
-<text>联系地址</text>
+<view>
+<input class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" bindinput="inputTyping" />
+<button type="primary"  bindtap="butsubmit">搜索</button>
+</view>

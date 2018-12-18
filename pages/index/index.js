@@ -1,54 +1,79 @@
 //index.js
-//获取应用实例
+//加载自定义tabBar
 const app = getApp()
-
+var template = require('../template/template.js');
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    motto: '欢迎来到喵右卫门',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    nameVal:"",
+    phoneVal:""
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  //获得姓名
+  nameTyping: function (e) {
+    this.setData({
+      nameVal: e.detail.value
+    });
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
+  //获得电话
+  phoneTyping: function (e) {
+    this.setData({
+      phoneVal: e.detail.value
+    });
+  },
+  btnSubmit: function (e) {
+    //姓名判定
+    if (this.data.nameVal == '') {
+      wx.showToast({
+        title: '请输入姓名',
+        image: '/images/wrong.png'
       })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
+      return false;
+    }
+    //电话判定
+    if (this.data.phoneVal == '') {
+      wx.showToast({
+        title: '请输入手机号',
+        image: '/images/wrong.png'
+      })
+      return false;
+    }
+    var checkPhone = /^1\d{10}$/;
+    if (!checkPhone.test(this.data.phoneVal)) {
+      wx.showToast({
+        title: '手机号不合法',
+        image: '/images/wrong.png'
+      })
+      return false;
+    }    
+    //后台传值
+    wx.request({
+      url: 'http://www.iquhou.com/php/api.php',
+      data: {
+        username:this.data.nameVal,
+        userphone:this.data.phoneVal,
+      },
+      header: { 'Content-Type': 'application/json' },
+      success: function (res) {
+        console.log(res.data)
+        wx.showToast({
+          title: '已提交',
+          icon: 'success',
+          duration: 2000
         })
       }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
     })
-  }
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    template.tabbar("tabBar", 1, this)//数字i表示第i+1个tabbar
+  },
+  
+
+
+  
 })
