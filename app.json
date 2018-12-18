@@ -31,8 +31,8 @@
       },
       {
         "pagePath": "pages/contact/contact",
-        "iconPath": "images/tabBar/live.png",
-        "selectedIconPath": "images/tabBar/liveHL.png",
+        "iconPath": "images/tabBar/contact.png",
+        "selectedIconPath": "images/tabBar/contactHL.png",
         "text": "联系我们"
       }
     ]
