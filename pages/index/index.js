@@ -50,7 +50,7 @@ Page({
     }    
     //后台传值
     wx.request({
-      url: 'http://www.iquhou.com/php/api.php',
+      url: 'http://www.miaocafe.net/xcx/api.php',
       data: {
         username:this.data.nameVal,
         userphone:this.data.phoneVal,
@@ -59,7 +59,7 @@ Page({
       success: function (res) {
         console.log(res.data)
         wx.showToast({
-          title: '已提交',
+          title: '留言成功',
           icon: 'success',
           duration: 2000
         })

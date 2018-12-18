@@ -6,11 +6,11 @@ Page({
     showView: true,
     list: [
       {
-        img: "../../images/7x7.jpg",
-        name: "Red",
-        phone: "13604555555",
-        job: "平面模特",
-        co: "杭州凌睿酒店管理有限公司"
+        img: "../../images/card.jpg",
+        name: "汪小勇",
+        phone: "13634169280",
+        job: "咖啡事业部总监",
+        co: "杭州喵右卫门餐饮管理连锁有限公司"
       }
     ]
   },
@@ -27,7 +27,7 @@ Page({
   },
   onShareAppMessage() {
     return {
-      title: '欢迎访问',
+      title: '您好,我是喵右卫门咖饮 咖啡事业部总监,汪小勇',
       path: 'page/component/pages/view/view'
     }
   },
@@ -41,10 +41,10 @@ Page({
   },
   savePhone: function () {
     wx.addPhoneContact({
-      firstName: "李白",
-      mobilePhoneNumber: "13604599228",
-      organization: "a公司",
-      title: "平面模特",
+      firstName: "汪小勇",
+      mobilePhoneNumber: "13634169280",
+      organization: "杭州喵右卫门餐饮管理连锁有限公司",
+      title: "咖啡事业部总监",
     })
   },
 

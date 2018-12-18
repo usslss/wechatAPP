@@ -1,5 +1,6 @@
 <!--pages/product/product.wxml-->
-
+<import src="../template/template.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
 <view class="container">
   <image src='http://www.miaocafe.net/xcx/banner.jpg' class='banner'></image>
   <view class='nav'>
@@ -34,8 +35,8 @@
   </view>
   <view class='ly'>
     <p>立即加入成为他们中的一员</p>
-    <input placeholder="请输入您的姓名" class='name' />
-    <input placeholder="请输入您的手机号" class='phone' />
-    <button class='jm'></button>
+    <input class='name' placeholder="请输入您的姓名" value="{{nameVal}}" bindinput="nameTyping" />
+    <input class='phone' placeholder="请输入您的手机号" value="{{phoneVal}}" bindinput="phoneTyping" />
+    <button class='jm' bindtap="btnSubmit"></button>
   </view>
 </view>

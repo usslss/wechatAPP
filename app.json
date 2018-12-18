@@ -1,10 +1,12 @@
 {
   "pages":[
+    "pages/card/card",
     "pages/index/index",    
-    "pages/contact/contact",  
-    "pages/card/card",  
+    "pages/contact/contact",
     "pages/about/about",   
+    "pages/product/product",
     "pages/store/store",
+    "pages/join/join",
     "pages/logs/logs"
   ],
   "window":{

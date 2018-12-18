@@ -1,4 +1,23 @@
-<view>
-<input class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" bindinput="inputTyping" />
-<button type="primary"  bindtap="butsubmit">搜索</button>
+<import src="../template/template.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+<view class="page-body">
+  <view class="page-section page-section-gap">
+    <map
+      id="myMap"
+      style="width: 100%; height: 300px;"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      markers="{{markers}}"
+      scale="{{scale}}"
+      covers="{{covers}}"
+      show-location
+    ></map>
+  </view>
+  <view class="btn-area" style="width:750rpx">   
+    <text class="line">杭州喵右卫门餐饮管理连锁有限公司 </text>  
+    <text class="line">\n杭州市余杭区良渚镇姚家路5号蓝都科创园10幢</text>
+    <button bindtap="phoneCall" class="page-body-button" type="primary">官方加盟热线：400-0570-288</button>
+  </view>
+
+
 </view>

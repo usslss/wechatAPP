@@ -1,66 +1,79 @@
 // pages/product/product.js
+//加载自定义tabBar
+const app = getApp()
+var template = require('../template/template.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    nameVal: "",
+    phoneVal: ""
   },
-
+  //获得姓名
+  nameTyping: function (e) {
+    this.setData({
+      nameVal: e.detail.value
+    });
+  },
+  //获得电话
+  phoneTyping: function (e) {
+    this.setData({
+      phoneVal: e.detail.value
+    });
+  },
+  btnSubmit: function (e) {
+    //姓名判定
+    if (this.data.nameVal == '') {
+      wx.showToast({
+        title: '请输入姓名',
+        image: '/images/wrong.png'
+      })
+      return false;
+    }
+    //电话判定
+    if (this.data.phoneVal == '') {
+      wx.showToast({
+        title: '请输入手机号',
+        image: '/images/wrong.png'
+      })
+      return false;
+    }
+    var checkPhone = /^1\d{10}$/;
+    if (!checkPhone.test(this.data.phoneVal)) {
+      wx.showToast({
+        title: '手机号不合法',
+        image: '/images/wrong.png'
+      })
+      return false;
+    }
+    //后台传值
+    wx.request({
+      url: 'http://www.miaocafe.net/xcx/api.php',
+      data: {
+        username: this.data.nameVal,
+        userphone: this.data.phoneVal,
+      },
+      header: { 'Content-Type': 'application/json' },
+      success: function (res) {
+        console.log(res.data)
+        wx.showToast({
+          title: '留言成功',
+          icon: 'success',
+          duration: 2000
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    template.tabbar("tabBar", 1, this)//数字i表示第i+1个tabbar
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
 
-  },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
 
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
