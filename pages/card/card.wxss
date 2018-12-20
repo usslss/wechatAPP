@@ -115,3 +115,20 @@ page{
   height:70rpx;
   width: 70rpx;
 }
+
+.visit{
+  margin-top:20rpx;
+  margin-left:8rpx;
+  height:400rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 25rpx;
+  background:none;
+  border:solid blue;
+  color: gray;
+}
+.avatar{
+  width:60rpx;
+  height:60rpx;
+  margin-left:10rpx;
+}

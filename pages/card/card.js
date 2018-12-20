@@ -18,6 +18,39 @@ Page({
     template.tabbar("tabBar", 0, this)//数字i表示第i+1个tabbar
     // 生命周期函数--监听页面加载    
     showView: (options.showView == "true" ? true : false)
+    var that = this
+    wx.request({
+      url: 'http://www.miaocafe.net/xcx/avatar.php', //仅为示例，并非真实的接口地址
+      data: {},
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+
+        console.log(res.data)
+        that.setData({
+          VisitBar: res.data
+        })
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    }),
+      /**
+      * 访客头像保存
+      */
+      wx.getUserInfo({
+        success: function (res) {
+          wx.request({
+            url: 'http://www.miaocafe.net/xcx/visit.php',
+            data: {
+              name: res.userInfo.nickName,
+              url: res.userInfo.avatarUrl,
+            },
+            header: { 'Content-Type': 'application/json' },
+          })
+        }
+      })
   }
   , onChangeShowState: function () {
     var that = this;

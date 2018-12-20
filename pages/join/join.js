@@ -50,6 +50,7 @@ Page({
     }
     //后台传值
     wx.request({
+      method:get,
       url: 'http://www.miaocafe.net/xcx/api.php',
       data: {
         username: this.data.nameVal,

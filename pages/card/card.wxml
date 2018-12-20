@@ -31,6 +31,17 @@
           <button type="primary" open-type="share" plain="true" class="btn">分享名片</button>
           <button type="primary" class="btn" bindtap="savePhone">存入手机通讯录</button>
         </view>
+
+    <view class="visit">
+      <block wx:for="{{VisitBar}}" >
+        <view>
+          <image class="avatar" src="{{item.url}}"></image>
+        </view>    
+      </block>
+      <view style="margin-top:70rpx;margin-left:-100rpx">
+      最近xx人浏览
+      </view>
+    </view>
   </view>     
   </view>
    
