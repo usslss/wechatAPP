@@ -29,19 +29,42 @@
     <view class="flex-wrp" style="margin-top:320rpx;height: 100px;flex-direction:column;">
         <view class="flex-wrp" style="flex-direction:row;margin-top:-300rpx">
           <button type="primary" open-type="share" plain="true" class="btn">分享名片</button>
-          <button type="primary" class="btn" bindtap="savePhone">存入手机通讯录</button>
+          <button type="primary" class="btn" bindtap="savePhone">存入通讯录</button>
         </view>
 
     <view class="visit">
-      <block wx:for="{{VisitBar}}" >
-        <view>
-          <image class="avatar" src="{{item.url}}"></image>
-        </view>    
-      </block>
-      <view style="margin-top:70rpx;margin-left:-100rpx">
-      最近xx人浏览
+
+      <view wx:for="{{VisitBar}}" >      
+          <image class="avatar" src="{{item.url}}"></image>   
       </view>
-    </view>
+
+      <view class="visit recent" wx:for="{{VisitRecent}}" >
+      最近{{item.visitSum}}人浏览 
+      </view>
+      
+
+<!--
+<view wx:for="{{like}}">
+  <image wx:if="{{item.likeStatus ==0}}" style="height:50rpx;width:50rpx;" bindtap='likeBtn' data-id='{{item.id}}' src='../../images/like0.png'></image>
+  <image wx:if="{{item.likeStatus ==1}}"  style="height:50rpx;width:50rpx;" bindtap='likeBtn' data-id='{{item.id}}' src='../../images/like1.png'></image>
+  <text> 靠谱:{{item.likeSum}}</text>
+</view>
+-->
+
+
+
+
+
+
+
+
+      </view>
+
+
+
+
+
+    
   </view>     
   </view>
    

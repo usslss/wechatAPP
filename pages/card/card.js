@@ -19,15 +19,14 @@ Page({
     // 生命周期函数--监听页面加载    
     showView: (options.showView == "true" ? true : false)
     var that = this
+    //访问头像列表
     wx.request({
-      url: 'http://www.miaocafe.net/xcx/avatar.php', //仅为示例，并非真实的接口地址
+      url: 'http://www.miaocafe.net/xcx/api/avatar.php', //接口地址
       data: {},
       header: {
         'content-type': 'application/json'
       },
       success: function (res) {
-
-        console.log(res.data)
         that.setData({
           VisitBar: res.data
         })
@@ -36,21 +35,44 @@ Page({
         console.log(err)
       }
     }),
-      /**
-      * 访客头像保存
-      */
-      wx.getUserInfo({
-        success: function (res) {
+    //访客头像保存 
+    wx.getUserInfo({
+      success: function (res) {
+        
+        wx.request({
+          url: 'http://www.miaocafe.net/xcx/api/visit.php',
+          data: {
+            name: res.userInfo.nickName,
+            url: res.userInfo.avatarUrl,
+          },
+          header: { 'Content-Type': 'application/json' },
+        }),
+          //浏览,点赞数字获取
+          
           wx.request({
-            url: 'http://www.miaocafe.net/xcx/visit.php',
+            url: 'http://www.miaocafe.net/xcx/api/like.php', //接口地址
             data: {
-              name: res.userInfo.nickName,
-              url: res.userInfo.avatarUrl,
+              avatarUrl: res.userInfo.avatarUrl,
+             
             },
-            header: { 'Content-Type': 'application/json' },
+            header: {
+              'content-type': 'application/json'
+            },
+            success: function (res) {
+              
+              that.setData({
+                VisitRecent: res.data,
+                like: res.data
+              })
+            },
+            fail: function (err) {
+              console.log(err)
+            }
           })
-        }
-      })
+      }
+    })
+ 
+      
   }
   , onChangeShowState: function () {
     var that = this;
@@ -81,6 +103,31 @@ Page({
     })
   },
 
+
+  // 更改点赞状态
+  likeBtn: function (e) {
+    var info_id = e.currentTarget.dataset.id;
+    var that = this;
+    console.log(that.data.like[0].likeStatus)
+
+    if ((that.data.like[0].likeStatus == 0)) {
+
+      that.setData({
+        ['like[0].likeStatus']: 1,
+        ['like[0].likeSum']: parseInt(that.data.like[0].likeSum) + 1
+      })
+    } else {
+      that.setData({
+        ['like[0].likeStatus']: 0,
+        ['like[0].likeSum']: parseInt(that.data.like[0].likeSum) - 1
+      })
+    }
+  }
+
+
+
+
 })
+
 
 
