@@ -83,7 +83,7 @@ Page({
   onShareAppMessage() {
     return {
       title: '您好,我是喵右卫门咖饮 咖啡事业部总监,汪小勇',
-      path: 'page/component/pages/view/view'
+      path: 'pages/card/card'
     }
   },
   phoneCall: function (e) {
