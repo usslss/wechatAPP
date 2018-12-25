@@ -21,7 +21,7 @@ Page({
     var that = this
     //访问头像列表
     wx.request({
-      url: 'http://www.miaocafe.net/xcx/api/avatar.php', //接口地址
+      url: 'https://www.miaocafe.net/xcx/api/avatar.php', //接口地址
       data: {},
       header: {
         'content-type': 'application/json'
@@ -40,7 +40,7 @@ Page({
       success: function (res) {
         
         wx.request({
-          url: 'http://www.miaocafe.net/xcx/api/visit.php',
+          url: 'https://www.miaocafe.net/xcx/api/visit.php',
           data: {
             name: res.userInfo.nickName,
             url: res.userInfo.avatarUrl,
@@ -50,7 +50,7 @@ Page({
           //浏览,点赞数字获取
           
           wx.request({
-            url: 'http://www.miaocafe.net/xcx/api/like.php', //接口地址
+            url: 'https://www.miaocafe.net/xcx/api/like.php', //接口地址
             data: {
               avatarUrl: res.userInfo.avatarUrl,
              
