@@ -1,7 +1,7 @@
 <import src="../template/template.wxml"/>
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
 <view class="section" wx:for="{{list}}">
-  <view class="flex-wrp" style="height: 400px;flex-direction:column;scroll-x:false">
+  <view class="flex-wrp" style="flex-direction:column;scroll-x:false">
         <view class="page-section-ctn">
           <image class="image" mode="widthFix" src="{{item.img}}"/>
           <view class="flex-item" >
@@ -26,30 +26,26 @@
               </view>
             </view>
          </view>
-    <view class="flex-wrp" style="margin-top:320rpx;height: 100px;flex-direction:column;">
-        <view class="flex-wrp" style="flex-direction:row;margin-top:-300rpx">
+    <view class="flex-wrp" style="flex-direction:column;">
+        <view class="flex-wrp" style="flex-direction:row;">
           <button type="primary" open-type="share" plain="true" class="btn">分享名片</button>
           <button type="primary" class="btn" bindtap="savePhone">存入通讯录</button>
         </view>
 
     <view class="visit">
 
-      <view wx:for="{{VisitBar}}" >      
+      <view wx:for="{{VisitBar}}" class='visit1'>      
           <image class="avatar" src="{{item.url}}"></image>   
       </view>
-
-      <view class="visit recent" wx:for="{{VisitRecent}}" >
+      <view class="recent" wx:for="{{VisitRecent}}" >
       最近{{item.visitSum}}人浏览 
-      </view>
-      
-
-<!--
-<view wx:for="{{like}}">
+      </view>  
+      <view wx:for="{{like}}" class='visit2'>
   <image wx:if="{{item.likeStatus ==0}}" style="height:50rpx;width:50rpx;" bindtap='likeBtn' data-id='{{item.id}}' src='../../images/like0.png'></image>
   <image wx:if="{{item.likeStatus ==1}}"  style="height:50rpx;width:50rpx;" bindtap='likeBtn' data-id='{{item.id}}' src='../../images/like1.png'></image>
   <text> 靠谱:{{item.likeSum}}</text>
 </view>
--->
+
 
 
 

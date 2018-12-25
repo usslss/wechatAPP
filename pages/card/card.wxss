@@ -13,7 +13,7 @@ page{
 } 
 
 .flex-wrp{
-  margin-top: 60rpx;
+  
   display:flex;
 }
 
@@ -117,24 +117,24 @@ page{
 }
 
 .visit{
-  margin-top:50rpx;
-  margin-left:8rpx;
+  
+  width:98%;
+  margin:0 auto;
   margin-bottom:30rpx;
-  height:200rpx;
-  flex-wrap:wrap;
-  display: flex;
-  flex-direction: row;
+  
   font-size: 25rpx;
   background:none;
-
+  position:relative;
   color: gray;
 }
+.visit1{float: left;margin-top:20rpx;}
+.visit2{margin-top: 20rpx;float:right;margin-right:10rpx;}
 .avatar{
   width:50rpx;
   height:50rpx;
   margin-left:10rpx;
 }
 .recent{
-  margin-top:10rpx;
-  margin-right:200rpx;
+  position:absolute;top:75rpx;left:10rpx;
+  display: block;
 }

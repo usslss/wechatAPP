@@ -47,13 +47,12 @@ Page({
           },
           header: { 'Content-Type': 'application/json' },
         }),
-          //浏览,点赞数字获取
-          
+
+      //浏览,点赞数字获取
           wx.request({
             url: 'https://www.miaocafe.net/xcx/api/like.php', //接口地址
             data: {
-              avatarUrl: res.userInfo.avatarUrl,
-             
+              avatarUrl: res.userInfo.avatarUrl, 
             },
             header: {
               'content-type': 'application/json'
@@ -71,7 +70,7 @@ Page({
           })
       }
     })
- 
+
       
   }
   , onChangeShowState: function () {
@@ -122,12 +121,20 @@ Page({
         ['like[0].likeSum']: parseInt(that.data.like[0].likeSum) - 1
       })
     }
+    //将更改后的点赞状态传至数据库
+    wx.getUserInfo({
+      success: function (res) {
+        wx.request({
+          url: 'https://www.miaocafe.net/xcx/api/like.php',
+          data: {
+            avatarUrl: res.userInfo.avatarUrl,
+            likeStatus: that.data.like[0].likeStatus,
+          },
+          header: { 'Content-Type': 'application/json' },
+            })
+          }
+    })
+
   }
 
-
-
-
 })
-
-
-

@@ -5,6 +5,7 @@
 }
 .tabBar{
   width:100%;
+  height:80rpx;
   position: fixed;
   bottom:0;
   padding:10rpx;
